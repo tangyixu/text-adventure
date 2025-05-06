@@ -7,6 +7,7 @@ package edu.grinnell.csc207;
  */
 class Item {
 
+    private Room room;
     private String name;
     private boolean inBag;
 
@@ -45,5 +46,15 @@ class Item {
      */
     public boolean inBag() {
         return this.inBag;
+    }
+
+    /**
+     * True if it is a wonder tree.
+     *
+     * @param room
+     * @return if it is a wonder tree.
+     */
+    public boolean isWonderTree(Room room) {
+        return (this.name.equals(room.getTreeName()));
     }
 }
