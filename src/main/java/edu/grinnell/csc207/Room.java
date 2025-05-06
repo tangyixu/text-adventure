@@ -7,7 +7,7 @@ package edu.grinnell.csc207;
  */
 public class Room {
 
-    private List<
+    private List<Item> items;
 
     //Wait////wait in the room for one turn
     //Go<direction> // go in the given cardinal direction, e.g., north or south
@@ -18,18 +18,16 @@ public class Room {
      *
      * @param item
      */
-
     public void Use(Item item) {
         //To-do: Implement me!
-    }//
+    }
 
     public void Attack(Item item) {
 
-    } // attack the given object found in the room
+    }// attack the given object found in the room
 
     public void Look at(Item item) {
 
-    }
-    // look at the given object found in the room
+    }// look at the given object found in the room
 
 }
