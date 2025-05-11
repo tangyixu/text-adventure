@@ -22,7 +22,7 @@ public class DeathDesert extends Room {
 
         gemTaken = false;
 
-        Item tree = new Item("Pyramid", this);
+        Item tree = new Item("pyramid", this);
         Item gem = new Item("gem", this);
 
         this.addItem(tree);

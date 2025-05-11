@@ -182,14 +182,13 @@ public abstract class Room {
      * @param object a item that the player is trying talking to
      */
     public void talkTo(String object) {
-        //Item item = new Item(object, this);
+        Item item = new Item(object, this);
         if (hasItem(object)) {
-            Item i = this.getItem(name);
-            if (i.isWonderTree(this)) {
-                System.out.println("You talked to " + i.getName() + ". The" + i.getName()
-                        + "says:" + "Welcome to " + this.getName() + "! Only those with courage may take my fruit.");
+            if (object.equals(wonderTree.getName())) {
+                System.out.println("You talked to " + item.getName() + ". The " + item.getName()
+                        + " says:" + "Welcome to " + this.getName() + "! Only those with courage may take my fruit.");
             } else {
-                System.out.println(i.getName() + " cannot speak if it is not a wonder tree!");
+                System.out.println(item.getName() + " cannot speak if it is not a wonder tree!");
             }
         } else {
             System.out.println("You didn't see " + object);
