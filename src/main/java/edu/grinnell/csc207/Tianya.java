@@ -31,4 +31,12 @@ public class Tianya extends Room {
         this.addConnectedRoom("East", new Moana());
     }
 
+    public void use(Item item) {
+        System.out.println("You cannot use any objects at the main room!");
+    }
+
+    public void lookAt(Item item) {
+        System.out.println("It is just an ordinary object.");
+    }
+
 }
