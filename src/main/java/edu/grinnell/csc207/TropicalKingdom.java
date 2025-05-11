@@ -33,6 +33,7 @@ public class TropicalKingdom extends Room {
         this.setWonderTree(tree);
         this.setGift(guava);
     }
+
     public void use(Item item) {
         String effect = "You drink the coconut juice and blow across the hollow coconut.\n"
                 + "The sound from the coconut summons a swarm of fish.\n"
@@ -41,5 +42,9 @@ public class TropicalKingdom extends Room {
 
         this.addConnectedRoom("South", new Tianya());
         go("South");
+    }
+
+    public String getIntro() {
+        return this.intro;
     }
 }

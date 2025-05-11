@@ -10,7 +10,7 @@ public class Moana extends Room {
 
     private boolean coconutTaken;
 
-    private String introduction = "You’ve entered a coastal region, "
+    private String intro = "You’ve entered a coastal region, "
             + "walking along a sandy beach lined with countless coconut trees. "
             + "The sea breeze and the sweet scent of coconuts fill the air. "
             + "As you take in the scene, you notice something unusual in the "
@@ -42,9 +42,13 @@ public class Moana extends Room {
                 + "The sound from the coconut summons a swarm of fish.\n"
                 + "The waves stirred up by the fish can carry you back to Tianya.\n";
         super.use(item, effect);
-        
+
         this.addConnectedRoom("West", new Tianya());
         go("West");
+    }
+
+    public String getIntro() {
+        return this.intro;
     }
 
 }

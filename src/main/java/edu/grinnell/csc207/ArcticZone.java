@@ -11,7 +11,7 @@ public class ArcticZone extends Room {
 
     private boolean loctusTaken;
 
-    private String introduction = "The biting cold wind lashes against your face. "
+    private String intro = "The biting cold wind lashes against your face. "
             + "You've entered the Arctic Zone. "
             + "Looking around, you see many penguins and glaciers. "
             + "In the distance, something is shimmering. "
@@ -48,4 +48,7 @@ public class ArcticZone extends Room {
         super.lookAt(item, "It is shimmered with ice.");
     }
 
+    public String getIntro() {
+        return this.intro;
+    }
 }

@@ -39,4 +39,7 @@ public class Tianya extends Room {
         System.out.println("It is just an ordinary object.");
     }
 
+    public String getIntro() {
+        return this.intro;
+    }
 }
