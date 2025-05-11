@@ -203,13 +203,12 @@ public abstract class Room {
      * Attack the given object found in the room, and print out effect.
      *
      * @param item
-     * @param effect
      */
     public void attack(Item item) {
         if (hasItem(item)) { //如果item属于room里可以interact的物品
             if (item.isWonderTree(this) && !item.hasAttacked()) {
                 System.out.println("You attacked" + item.getName() + "."
-                        + "The gift fallen down by your foot.");
+                        + "The gift has fallen down by your foot.");
             } else {
                 System.out.println("You cannot attack" + item.getName()
                         + " if it is not a wonder tree or it has been attacked!");
