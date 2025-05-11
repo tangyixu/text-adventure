@@ -11,8 +11,7 @@ import java.util.HashMap;
  *
  * @author yutong
  */
-public class DeathDessert extends Room {
-
+public class DeathDesert extends Room {
     private boolean gemTaken;
 
     private String intro = "As soon as you open the door, a mouthful of sand hits you. "
@@ -21,13 +20,11 @@ public class DeathDessert extends Room {
             + "You need to obtain something from the pyramid for the quest "
             + "to be considered complete. You prepare to attack the pyramid.";
 
-    public DeathDessert() {
-        super("DeathDessert", new ArrayList<>(), null, new HashMap<>(), null);
 
+    public DeathDesert() {
+        super("DeathDesert", new ArrayList<>(), null, new HashMap<>(), null);
+        
         gemTaken = false;
-
-        //TODO
-        intro = "";
 
         Item tree = new Item("Pyramid", this);
         Item gem = new Item("gem", this);
@@ -36,7 +33,7 @@ public class DeathDessert extends Room {
         this.addItem(gem);
         this.setWonderTree(tree);
         this.setGift(gem);
-
-        this.addConnectedRoom("East", new Tianya());
+        
+        this.addConnectedRoom("North", new Tianya());
     }
 }

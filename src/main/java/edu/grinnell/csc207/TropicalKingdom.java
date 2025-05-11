@@ -11,18 +11,15 @@ import java.util.HashMap;
  *
  * @author yutong
  */
-public class TropicalKingkom extends Room{
+public class TropicalKingdom extends Room{
     private boolean guavaTaken;
     
     private String intro;
 
-    public TropicalKingkom() {
-        super("DeathDessert", new ArrayList<>(), null, new HashMap<>(), null);
+    public TropicalKingdom() {
+        super("TropicalKingdom", new ArrayList<>(), null, new HashMap<>(), null);
         
         guavaTaken = false;
-        
-        //TODO
-        intro = "";
 
         Item tree = new Item("Rainbow Tree", this);
         Item guava = new Item("guava", this);
