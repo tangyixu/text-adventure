@@ -42,8 +42,8 @@ public class DeathDesert extends Room {
         go("North");
     }
 
-    public void lookAt(Item item) {
-        super.lookAt(item, "It is covered with dusts and sand.");
+    public void lookAt(Item item, String effect) {
+        super.lookAt(item, " It is covered with dusts and sand.");
     }
 
     public String getIntro() {

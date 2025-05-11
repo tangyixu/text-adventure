@@ -21,6 +21,20 @@ public class TextAdventure {
                            the Arctic Zone, Tropical Kingdom, Death Desert, and Moana.
                            Each holding unique mystical gifts.
                            Now, begin your journey!""");
+
+        System.out.println("You’ve entered a grand temple with four towering doors,\n "
+                + "each aligned with one of the cardinal directions—North, South, East, and West.\n "
+                + "Every door radiates a distinct aura: one blazes with the "
+                + "intensity of scorching sunlight, another glistens as though sealed in ice,\n "
+                + "a third echoes faintly with the rhythmic crashing of waves,\n "
+                + "and the last carries the thick, humid scent of a tropical rainforest drenched in rain.\n"
+                + "You remember an old legend: "
+                + "if you collect the four Sacred Trees—each hidden within the elemental palaces\n "
+                + "beyond these doors—you will be granted one chance at rebirth…\n "
+                + "a chance to return and retake your CSC 207 exam, which you didn’t do so well on this time.\n"
+                + "Driven by desperation and determination, you take a deep breath and prepare to begin your journey.\n"
+                + "Which direction will you choose first [North, South, East, West]?\n");
+
         System.out.println("\nAvailable Actions: \n"
                 + "Wait: wait in the room for one turn\n"
                 + "Go <direction>: go in the given cardinal direction, e.g., north or south\n"
@@ -41,9 +55,13 @@ public class TextAdventure {
         Room curRoom = mainHall;
         while (!inventory.hasAllFourGifts()) {
             Room next = Parser.parser(curRoom);
-            if (next != null){
+            if (next != null) {
                 curRoom = next;
             }
         }
+        System.out.println("Your mission has been accomplished. \n"
+                + "You have reborn! Reborn one week before the CSC207 finals!\n "
+                + "This time study hard and debug your projects properly!\n "
+                + "Don't play games every day! Wishing you a productive and rewardingsemester!\n");
     }
 }
