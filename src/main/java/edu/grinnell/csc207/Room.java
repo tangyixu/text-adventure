@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * A Room class that implements basic responses of four kindoms.
+ * A Room class that implements basic responses of four kingdoms.
  *
  * @author Tiffany Tang and Annie Li
  */
@@ -81,7 +81,7 @@ public class Room {
      * wait in the room for one turn
      */
     public void Wait() {
-        System.out.println("Time passes");
+        System.out.println("Time passes.");
     }
 
     /**
@@ -90,7 +90,7 @@ public class Room {
      * @param Direction a string that contains the direction that the player
      * wants to go
      */
-    public void Go(String Direction) {
+    public void go(String Direction) {
         Room next = connectedrooms.get(Direction);
         if (next == null) {
             System.out.println("The wind whispers that the path to the " + Direction + " does not yet exist...");
@@ -107,13 +107,17 @@ public class Room {
     /**
      * talk to the given object found in the room
      *
-     * @param object a String of the object that the player is trying talking to
+     * @param item a item that the player is trying talking to
      */
-    public void TalkTo(String object) {
-        if (objects.contains(object.toLowerCase())) { //objects需要被替换
-            System.out.println("You try talking to the " + object + ", but it says nothing.");
+    public void talkTo(Item item) {
+        if (hasItem(item) && !item.inBag()) { 
+            if (item.isWonderTree(this)) {
+                System.out.println("You talked to " + item.getName() + ". The" + item.getName() + "says:" + "Welcome to " + this.getName());
+            } else {
+                System.out.println(item.getName() + " cannot speak if it is not a wonder tree!");
+            }
         } else {
-            System.out.println("You didn't see " + object);
+            System.out.println("You didn't see " + item.getName());
         }
 
     }
@@ -121,12 +125,12 @@ public class Room {
     /**
      * pick up the given item found in the room
      *
-     * @param item a string is the item that we want to pick up
+     * @param item a item that we want to pick up
      */
-    public void PickUp(String item) {
-        if (items.contains(item.toLowerCase())) { //可以调用前文我写的hasItem
-            items.remove(item.toLowerCase());//可能需要修改一下调用参数
-            //inventory.add(item.toLowerCase());
+    public void pickUp(Item item) {
+        if (hasItem(item) && !item.inBag()) { 
+            items.remove(item);
+            item.putInBag();
             System.out.println("You picked up the " + item + ".");
         } else {
             System.out.println("You didn't see the " + item + ".");
@@ -139,7 +143,7 @@ public class Room {
      * @param item
      * @param effect
      */
-    public void Use(Item item, String effect) {
+    public void use(Item item, String effect) {
         if (item.inBag()) {
             System.out.println("You used" + item.getName() + "." + effect);
         } else {
@@ -153,7 +157,7 @@ public class Room {
      * @param item
      * @param effect
      */
-    public void Attack(Item item, String effect) {
+    public void attack(Item item, String effect) {
         if (hasItem(item)) { //如果item属于room里可以interact的物品
             if (item.isWonderTree(this) && !item.hasAttacked()) {
                 System.out.println("You attacked" + item.getName() + "."
@@ -163,7 +167,7 @@ public class Room {
                         + " if it is not a wonder tree or it has been attacked!");
             }
         } else {
-            System.out.println("You cannot interact with" + item.getName());
+            System.out.println("You didn't see " + item.getName());
             //不是的话就说不可以互动
         }
     }
@@ -174,7 +178,7 @@ public class Room {
      * @param item
      * @param effect
      */
-    public void Lookat(Item item, String effect) {
+    public void lookAt(Item item, String effect) {
         System.out.println("You looked at" + item.getName() + effect);
     }
 }
