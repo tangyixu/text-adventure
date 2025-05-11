@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package edu.grinnell.csc207;
 
 import java.util.ArrayList;
@@ -27,16 +23,12 @@ public class Tianya extends Room {
             + "Which direction will you choose first [North, South, East, West]?";
 
     public Tianya() {
-        super("Moana", new ArrayList<>(), null, new HashMap<>());
+        super("Tianya", new ArrayList<>(), null, new HashMap<>(), null);
 
-        Item tree = new Item("Coconut Tree", false, this);
-        Item coconut = new Item("Coconut", false, this);
-
-        this.addItem(tree);
-        this.addItem(coconut);
-        this.setWonderTree(tree);
-
-        this.addConnectedRoom("West", new Tianya());
+        this.addConnectedRoom("North", new TropicalKingdom());
+        this.addConnectedRoom("South", new DeathDesert());
+        this.addConnectedRoom("West", new ArcticZone());
+        this.addConnectedRoom("East", new Moana());
     }
 
 }

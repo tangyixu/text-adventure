@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package edu.grinnell.csc207;
 
 import java.util.ArrayList;
@@ -11,7 +7,7 @@ import java.util.HashMap;
  *
  * @author yutong
  */
-public class DeathDessert extends Room {
+public class DeathDesert extends Room {
 
     private boolean gemTaken;
 
@@ -21,13 +17,10 @@ public class DeathDessert extends Room {
             + "You need to obtain something from the pyramid for the quest "
             + "to be considered complete. You prepare to attack the pyramid.";
 
-    public DeathDessert() {
-        super("DeathDessert", new ArrayList<>(), null, new HashMap<>(), null);
+    public DeathDesert() {
+        super("DeathDesert", new ArrayList<>(), null, new HashMap<>(), null);
 
         gemTaken = false;
-
-        //TODO
-        intro = "";
 
         Item tree = new Item("Pyramid", this);
         Item gem = new Item("gem", this);
@@ -37,6 +30,6 @@ public class DeathDessert extends Room {
         this.setWonderTree(tree);
         this.setGift(gem);
 
-        this.addConnectedRoom("East", new Tianya());
+        this.addConnectedRoom("North", new Tianya());
     }
 }

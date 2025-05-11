@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package edu.grinnell.csc207;
 
 import java.util.ArrayList;
@@ -11,7 +7,7 @@ import java.util.HashMap;
  *
  * @author yutong
  */
-public class TropicalKingkom extends Room {
+public class TropicalKingdom extends Room {
 
     private boolean guavaTaken;
 
@@ -24,13 +20,10 @@ public class TropicalKingkom extends Room {
             + "they grow on is beautiful—like a rainbow—and is said to "
             + "drop mysterious gifts. You're considering attacking the **Rainbow Tree**!";
 
-    public TropicalKingkom() {
-        super("DeathDessert", new ArrayList<>(), null, new HashMap<>(), null);
+    public TropicalKingdom() {
+        super("TropicalKingdom", new ArrayList<>(), null, new HashMap<>(), null);
 
         guavaTaken = false;
-
-        //TODO
-        intro = "";
 
         Item tree = new Item("Rainbow Tree", this);
         Item guava = new Item("guava", this);
