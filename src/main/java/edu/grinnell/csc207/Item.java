@@ -5,22 +5,25 @@ package edu.grinnell.csc207;
  *
  * @author Tiffany Tang
  */
-class Item {
+public class Item {
 
     private Room room;
     private String name;
     private boolean inBag;
+    private boolean attacked;
 
     /**
      * Construct a new item with name and default to be not in bag.
      *
      * @param name
      * @param inBag
+     * @param room
      */
-    public Item(String name, boolean inBag) {
+    public Item(String name, boolean inBag, Room room) {
+        this.room = room;
         this.name = name;
         this.inBag = false;
-
+        attacked = false;
     }
 
     /**
@@ -56,5 +59,14 @@ class Item {
      */
     public boolean isWonderTree(Room room) {
         return (this.name.equals(room.getTreeName()));
+    }
+
+    /**
+     * Determine if an object has been attacked.
+     *
+     * @return true is it has been attacked. False otherwise.
+     */
+    public boolean hasAttacked() {
+        return this.attacked;
     }
 }
