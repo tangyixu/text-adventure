@@ -10,6 +10,8 @@ import java.util.Map;
  */
 public abstract class Room {
 
+    private String intro;
+
     /* The items that are available to interact with in this room.*/
     private List<Item> items;
 
@@ -169,6 +171,7 @@ public abstract class Room {
             return this;
         } else {
             System.out.println("A gust of wind lifts you gently and places you at the edge of the " + next.getName() + ".");
+            System.out.println(next.getIntro());
         }
         return next;
     }
@@ -255,5 +258,9 @@ public abstract class Room {
      */
     public void lookAt(Item item, String effect) {
         System.out.println("You looked at" + item.getName() + "." + effect);
+    }
+
+    public String getIntro() {
+        return this.intro;
     }
 }
