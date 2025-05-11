@@ -25,8 +25,8 @@ public class ArcticZone extends Room {
 
         loctusTaken = false;
 
-        Item tree = new Item("Loctus", this);
-        Item seed = new Item("LoctusSeed", this);
+        Item tree = new Item("loctus", this);
+        Item seed = new Item("loctusroot", this);
 
         this.addItem(tree);
         this.addItem(seed);
@@ -35,7 +35,7 @@ public class ArcticZone extends Room {
     }
 
     public void use(Item item) {
-        super.use(item, "You ate the lotus seed and suddenly, you float up like a cloud."
+        super.use(item, "You ate the lotusroot and suddenly, you float up like a cloud."
                 + "You feel a stream of energy flowing through your body. "
                 + "You sense your Governing and Conception Vessels (Ren and Du meridians) "
                 + "have been unlocked, and you've gained extraordinary power from "

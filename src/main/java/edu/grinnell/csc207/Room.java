@@ -203,12 +203,14 @@ public abstract class Room {
      */
     public void pickUp(String object) {
         Item item = new Item(object, this);
-        if (hasItem(item)) {
-            if (item.isGift(this)) {
+        if (hasItem(object)) {
+            if (wonderTree.hasAttacked() && object.equals(gift.getName())) {
                 items.remove(item);
                 item.putInBag();
                 System.out.println("You picked up the " + object + ".");
-            } else {
+            } else if (!wonderTree.hasAttacked() && object.equals(gift.getName())) {
+                System.out.println("To get the " + object + ", you need to attack the " + wonderTree.getName() + "!");
+            } else{
                 System.out.println(item.getName() + " is not a gift! You cannot bring it away!");
             }
         } else {

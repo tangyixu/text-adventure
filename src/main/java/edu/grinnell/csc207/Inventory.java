@@ -32,8 +32,8 @@ public class Inventory {
     }
 
     public boolean hasAllFourGifts() {
-        return (hasItem("LotusSeed")
-                && hasItem("Coconut")
+        return (hasItem("lotusroot")
+                && hasItem("coconut")
                 && hasItem("gem")
                 && hasItem("guava"));
     }
