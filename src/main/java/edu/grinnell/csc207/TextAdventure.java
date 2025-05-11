@@ -48,6 +48,12 @@ public class TextAdventure {
         TropicalKingdom tropical = new TropicalKingdom();
         Moana sea = new Moana();
         DeathDesert desert = new DeathDesert();
+
+        arctic.addConnectedRoom("east", mainHall);
+        tropical.addConnectedRoom("south", mainHall);
+        desert.addConnectedRoom("north", mainHall);
+        sea.addConnectedRoom("west", mainHall);
+
         mainHall.addConnectedRoom("north", tropical);
         mainHall.addConnectedRoom("south", desert);
         mainHall.addConnectedRoom("west", arctic);
