@@ -8,10 +8,17 @@ import java.util.*;
  */
 public class Moana extends Room {
 
-    private boolean coconutTaken = false;
+    private boolean coconutTaken;
+    
+    private String intro;
 
     public Moana() {
         super("Moana", new ArrayList<>(), null, new HashMap<>(), null);
+        
+        coconutTaken = false;
+        
+        //TODO
+        intro = "";
 
         Item tree = new Item("Coconut Tree", this);
         Item coconut = new Item("Coconut", this);
@@ -20,6 +27,8 @@ public class Moana extends Room {
         this.addItem(coconut);
         this.setWonderTree(tree);
         this.setGift(coconut);
+        
+        this.addConnectedRoom("West", new Tianya());
     }
 
     public void waitResponse() {
@@ -28,7 +37,7 @@ public class Moana extends Room {
 
     @Override
     public void use(Item item, String effect) {
-        super(item, "");
+       
     }
 
 }
