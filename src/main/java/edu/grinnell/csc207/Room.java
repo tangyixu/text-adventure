@@ -160,19 +160,17 @@ public abstract class Room {
      *
      * @param Direction a string that contains the direction that the player
      * wants to go
+     * @return the next room
      */
-    public void go(String Direction) {
+    public Room go(String Direction) {
         Room next = connectedrooms.get(Direction);
         if (next == null) {
             System.out.println("The wind whispers that the path to the " + Direction + " does not yet exist...");
+            return this;
         } else {
-            items = next.items;
-            connectedrooms = next.connectedrooms;
-            name = next.name;
-            wonderTree = next.wonderTree;
-            System.out.println("A gust of wind lifts you gently and places you at the edge of the " + name + ".");
+            System.out.println("A gust of wind lifts you gently and places you at the edge of the " + next.getName() + ".");
         }
-
+        return next;
     }
 
     /**
