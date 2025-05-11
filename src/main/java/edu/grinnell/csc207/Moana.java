@@ -8,6 +8,14 @@ import java.util.*;
  */
 public class Moana extends Room {
 
+    private String introduction = "You’ve entered a coastal region, "
+            + "walking along a sandy beach lined with countless coconut trees. "
+            + "The sea breeze and the sweet scent of coconuts fill the air. "
+            + "As you take in the scene, you notice something unusual in the "
+            + "distance—a massive coconut tree, entirely made of gold. "
+            + "Sunlight reflects off its surface, casting dazzling rays "
+            + "in all directions. "
+            + "You pause for a moment, considering whether to attack [coconut tree].";
     private boolean coconutTaken = false;
 
     public Moana() {
