@@ -32,9 +32,15 @@ public class ArcticZone extends Room {
         this.addItem(seed);
         this.setWonderTree(tree);
         this.setGift(seed);
+    }
+    public void use(Item item) {
+        String effect = "You drink the coconut juice and blow across the hollow coconut.\n"
+                + "The sound from the coconut summons a swarm of fish.\n"
+                + "The waves stirred up by the fish can carry you back to Tianya.\n";
+        super.use(item, effect);
         
         this.addConnectedRoom("East", new Tianya());
+        go("East");
     }
-    
 
 }

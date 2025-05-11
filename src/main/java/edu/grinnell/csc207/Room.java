@@ -176,7 +176,7 @@ public abstract class Room {
             if (item.isGift(this)) {
                 items.remove(item);
                 item.putInBag();
-                System.out.println("You picked up the " + item + ".");
+                System.out.println("You picked up the " + object + ".");
             } else {
                 System.out.println(item.getName() + " is not a gift! You cannot bring it away!");
             }
@@ -193,7 +193,7 @@ public abstract class Room {
      */
     public void use(Item item, String effect) {
         if (item.inBag()) {
-            System.out.println("You used" + item.getName() + "." + effect);
+            System.out.println("You used" + item.getName() + ". " + effect);
         } else {
             System.out.println("This item is not in your bag! You cannot use it.");
         }

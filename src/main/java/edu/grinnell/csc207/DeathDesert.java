@@ -33,7 +33,15 @@ public class DeathDesert extends Room {
         this.addItem(gem);
         this.setWonderTree(tree);
         this.setGift(gem);
+    }
+    
+    public void use(Item item) {
+        String effect = "You drink the coconut juice and blow across the hollow coconut.\n"
+                + "The sound from the coconut summons a swarm of fish.\n"
+                + "The waves stirred up by the fish can carry you back to Tianya.\n";
+        super.use(item, effect);
         
         this.addConnectedRoom("North", new Tianya());
+        go("North");
     }
 }
