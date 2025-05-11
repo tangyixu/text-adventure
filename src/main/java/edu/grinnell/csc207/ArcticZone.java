@@ -10,7 +10,7 @@ import java.util.HashMap;
 public class ArcticZone extends Room {
 
     private boolean loctusTaken;
-    
+
     private String introduction = "The biting cold wind lashes against your face. "
             + "You've entered the Arctic Zone. "
             + "Looking around, you see many penguins and glaciers. "
@@ -18,11 +18,11 @@ public class ArcticZone extends Room {
             + "You recall an ancient legend that speaks of a giant Arctic Snow Lotus "
             + "at the peak of the northern lands. "
             + "It is said to bear mysterious fruit—fruit that grants magical powers."
-            + "You are thinking of attacking [Lotus].";   
+            + "You are thinking of attacking [Lotus].";
 
     public ArcticZone() {
         super("ArcticZone", new ArrayList<>(), null, new HashMap<>(), null);
-        
+
         loctusTaken = false;
 
         Item tree = new Item("Loctus", this);
@@ -33,14 +33,19 @@ public class ArcticZone extends Room {
         this.setWonderTree(tree);
         this.setGift(seed);
     }
+
     public void use(Item item) {
-        String effect = "You drink the coconut juice and blow across the hollow coconut.\n"
-                + "The sound from the coconut summons a swarm of fish.\n"
-                + "The waves stirred up by the fish can carry you back to Tianya.\n";
-        super.use(item, effect);
-        
+        super.use(item, "You ate the lotus seed and suddenly, you float up like a cloud."
+                + "You feel a stream of energy flowing through your body. "
+                + "You sense your Governing and Conception Vessels (Ren and Du meridians) "
+                + "have been unlocked, and you've gained extraordinary power from "
+                + "a sacred artifact of the Arctic Zone!");
         this.addConnectedRoom("East", new Tianya());
         go("East");
+    }
+
+    public void lookAt(Item item) {
+        super.lookAt(item, "It is shimmered with ice.");
     }
 
 }

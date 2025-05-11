@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package edu.grinnell.csc207;
 
 import java.util.ArrayList;
@@ -12,6 +8,7 @@ import java.util.HashMap;
  * @author yutong
  */
 public class DeathDesert extends Room {
+
     private boolean gemTaken;
 
     private String intro = "As soon as you open the door, a mouthful of sand hits you. "
@@ -20,10 +17,9 @@ public class DeathDesert extends Room {
             + "You need to obtain something from the pyramid for the quest "
             + "to be considered complete. You prepare to attack the pyramid.";
 
-
     public DeathDesert() {
         super("DeathDesert", new ArrayList<>(), null, new HashMap<>(), null);
-        
+
         gemTaken = false;
 
         Item tree = new Item("Pyramid", this);
@@ -34,14 +30,19 @@ public class DeathDesert extends Room {
         this.setWonderTree(tree);
         this.setGift(gem);
     }
-    
     public void use(Item item) {
-        String effect = "You drink the coconut juice and blow across the hollow coconut.\n"
-                + "The sound from the coconut summons a swarm of fish.\n"
-                + "The waves stirred up by the fish can carry you back to Tianya.\n";
-        super.use(item, effect);
-        
+        super.use(item, "You clutch the gemstone in your hand, and suddenly "
+                + "it emits a dazzling light that envelops you. "
+                + "In an instant, you find yourself clad in golden armor, "
+                + "which quickly turns invisible. Yet you feel your "
+                + "combat power has increased dramatically, filling you "
+                + "with newfound confidence to continue your exploration.");
         this.addConnectedRoom("North", new Tianya());
         go("North");
     }
+
+    public void lookAt(Item item) {
+        super.lookAt(item, "It is covered with dusts and sand.");
+    }
+
 }

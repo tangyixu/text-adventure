@@ -226,6 +226,6 @@ public abstract class Room {
      * @param effect
      */
     public void lookAt(Item item, String effect) {
-        System.out.println("You looked at" + item.getName() + effect);
+        System.out.println("You looked at" + item.getName() + "." + effect);
     }
 }
