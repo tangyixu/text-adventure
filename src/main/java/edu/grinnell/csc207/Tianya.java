@@ -25,10 +25,10 @@ public class Tianya extends Room {
     public Tianya() {
         super("Tianya", new ArrayList<>(), null, new HashMap<>(), null);
 
-        this.addConnectedRoom("North", new TropicalKingdom());
-        this.addConnectedRoom("South", new DeathDesert());
-        this.addConnectedRoom("West", new ArcticZone());
-        this.addConnectedRoom("East", new Moana());
+//        this.addConnectedRoom("North", new TropicalKingdom());
+//        this.addConnectedRoom("South", new DeathDesert());
+//        this.addConnectedRoom("West", new ArcticZone());
+//        this.addConnectedRoom("East", new Moana());
     }
 
     public void use(Item item) {

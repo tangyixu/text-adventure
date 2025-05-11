@@ -30,6 +30,14 @@ public class TextAdventure {
                 + "Attack <object>: attack the given object found in the room\n"
                 + "Look at <object>: look at the given object found in the room");
         Tianya mainHall = new Tianya();
+        ArcticZone arctic = new ArcticZone();
+        TropicalKingdom tropical = new TropicalKingdom();
+        Moana sea = new Moana();
+        DeathDesert desert = new DeathDesert();
+        mainHall.addConnectedRoom("North", tropical);
+        mainHall.addConnectedRoom("South", desert);
+        mainHall.addConnectedRoom("West", arctic);
+        mainHall.addConnectedRoom("East", sea);
         Room curRoom = mainHall;
         while (!inventory.hasAllFourGifts()) {
             Parser.parser(curRoom);
