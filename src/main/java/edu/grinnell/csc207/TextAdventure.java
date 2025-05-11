@@ -15,10 +15,10 @@ public class TextAdventure {
      */
     public static void main(String[] args) {
         Inventory inventory = new Inventory();
-        System.out.println("Dear Adventurers, greetings! Welcome to the Fantasy Continent! "
-                + "Here, you'll have the chance to explore four distinct realms: "
+        System.out.println("Dear Adventurers, greetings! Welcome to the Fantasy Continent!\n "
+                + "Here, you'll have the chance to explore four distinct realms:\n "
                 + "the Arctic Zone, Tropical Kingdom, Death Desert, and Moana—each "
-                + "holding unique mystical gifts. Now, begin your journey!");
+                + "holding unique mystical gifts. \nNow, begin your journey!");
         Tianya mainHall = new Tianya();
         Room curRoom = mainHall;
         while (!inventory.hasAllFourGifts()) {

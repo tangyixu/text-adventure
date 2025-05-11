@@ -20,6 +20,9 @@ public class Inventory {
     }
 
     public boolean hasItem(String name) {
+        if (this.inventory == null) {
+            return false;
+        }
         for (Item i : this.inventory) {
             if (i.getName().toLowerCase().equals(name.toLowerCase())) {
                 return true;
