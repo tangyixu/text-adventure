@@ -64,7 +64,6 @@ public abstract class Room {
      */
     public boolean hasItem(String str) {   
         for (Item i : this.items) {
-            System.out.println(i.getName());
             if (i.getName().toLowerCase().equals(str.toLowerCase())) {
                 return true;
             }
@@ -187,9 +186,9 @@ public abstract class Room {
         if (hasItem(object)) {
             if (object.equals(wonderTree.getName())) {
                 System.out.println("You talked to " + item.getName() + ". The " + item.getName()
-                        + " says:" + "Welcome to " + this.getName() + "! Only those with courage may take my fruit.");
+                        + " says: Welcome to " + this.getName() + "! Only those with courage may take my fruit.");
             } else {
-                System.out.println(item.getName() + " cannot speak if it is not a wonder tree!");
+                System.out.println(item.getName() + " cannot speak becasue it is not a wonder tree!");
             }
         } else {
             System.out.println("You didn't see " + item.getName());
@@ -204,7 +203,7 @@ public abstract class Room {
      */
     public void pickUp(String object) {
         Item item = new Item(object, this);
-        if (hasItem(item) && !item.inBag()) {
+        if (hasItem(item)) {
             if (item.isGift(this)) {
                 items.remove(item);
                 item.putInBag();
@@ -213,7 +212,7 @@ public abstract class Room {
                 System.out.println(item.getName() + " is not a gift! You cannot bring it away!");
             }
         } else {
-            System.out.println("You didn't see the " + item + ".");
+            System.out.println("You didn't see the " + object + ".");
         }
     }
 
@@ -239,7 +238,7 @@ public abstract class Room {
     public void attack(Item item) {
         if (hasItem(item)) { //如果item属于room里可以interact的物品
             if (item.isWonderTree(this) && !item.hasAttacked()) {
-                System.out.println("You attacked" + item.getName() + "."
+                System.out.println("You attacked " + item.getName() + "."
                         + "The gift has fallen down by your foot.");
             } else {
                 System.out.println("You cannot attack" + item.getName()
