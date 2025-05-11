@@ -1,11 +1,5 @@
 package edu.grinnell.csc207;
 
-import java.util.ArrayList;
-
-/**
- *
- * @author XIALUO
- */
 public class TextAdventure {
 //Ultimately, your program TextAdventure should operate as follows:
 //
@@ -30,7 +24,5 @@ public class TextAdventure {
         while (!inventory.hasAllFourGifts()) {
             Parser.parser(curRoom);
         }
-
     }
-
 }
