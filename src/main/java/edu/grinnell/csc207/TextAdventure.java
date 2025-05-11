@@ -15,10 +15,20 @@ public class TextAdventure {
      */
     public static void main(String[] args) {
         Inventory inventory = new Inventory();
-        System.out.println("Dear Adventurers, greetings! Welcome to the Fantasy Continent!\n "
-                + "Here, you'll have the chance to explore four distinct realms:\n "
-                + "the Arctic Zone, Tropical Kingdom, Death Desert, and Moana—each "
-                + "holding unique mystical gifts. \nNow, begin your journey!");
+        System.out.println("""
+                           Dear Adventurers, greetings! Welcome to the Fantasy Continent!
+                           Here, you'll have the chance to explore four distinct realms:
+                           the Arctic Zone, Tropical Kingdom, Death Desert, and Moana.
+                           Each holding unique mystical gifts.
+                           Now, begin your journey!""");
+        System.out.println("\nAvailable Actions: \n"
+                + "Wait: wait in the room for one turn\n"
+                + "Go <direction>: go in the given cardinal direction, e.g., north or south\n"
+                + "Talk to <object>: talk to the given object found in the room\n"
+                + "Pick up <item>: pick up the given item found in the room\n"
+                + "Use <item>: use the given item found in the player's inventory\n"
+                + "Attack <object>: attack the given object found in the room\n"
+                + "Look at <object>: look at the given object found in the room");
         Tianya mainHall = new Tianya();
         Room curRoom = mainHall;
         while (!inventory.hasAllFourGifts()) {
