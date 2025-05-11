@@ -15,7 +15,7 @@ public class DeathDesert extends Room {
             + "You've entered the Death Desert!\nYou spot scorpions nearby,"
             + " and in the distance, you see a shimmering mirage.\n"
             + "You need to obtain something from the pyramid for the quest"
-            + "to be considered complete.\nYou are prepared to attack the pyramid.";
+            + "to be considered complete.\n You are prepared to attack the pyramid.";
 
     public DeathDesert() {
         super("DeathDesert", new ArrayList<>(), null, new HashMap<>(), null);
