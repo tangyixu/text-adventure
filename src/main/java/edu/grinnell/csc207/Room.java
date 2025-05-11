@@ -48,10 +48,25 @@ public abstract class Room {
      * Determine if an item is is interactable in this room.
      *
      * @param item
-     * @return
+     * @return true if it is contained, false otherwise.
      */
     public boolean hasItem(Item item) {
         return this.items.contains(item);
+    }
+
+    /**
+     * Determine if an item is is interactable in this room.
+     *
+     * @param str
+     * @return true if it is contained, false otherwise.
+     */
+    public boolean hasItem(String str) {
+        for (Item i : this.items) {
+            if (i.getName().toLowerCase().equals(name.toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -79,6 +94,21 @@ public abstract class Room {
      */
     public String getName() {
         return this.name;
+    }
+
+    /**
+     * Get the item from the list based on the item's name.
+     *
+     * @param name
+     * @return
+     */
+    public Item getItem(String name) {
+        for (Item i : this.items) {
+            if (i.getName().toLowerCase().equals(name.toLowerCase())) {
+                return i;
+            }
+        }
+        return new Item(null, this);
     }
 
     /**
