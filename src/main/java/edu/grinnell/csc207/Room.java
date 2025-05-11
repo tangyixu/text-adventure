@@ -206,7 +206,6 @@ public abstract class Room {
         if (hasItem(object)) {
             if (wonderTree.hasAttacked() && object.equals(gift.getName())) {
                 items.get(1).putInBag();
-                items.remove(1);
                 System.out.println("You picked up the " + object + ".");
             } else if (!wonderTree.hasAttacked() && object.equals(gift.getName())) {
                 System.out.println("To get the " + object + ", you need to attack the " + wonderTree.getName() + "!");
@@ -226,7 +225,7 @@ public abstract class Room {
      */
     public void use(Item item, String effect) {
         if (item.inBag()) {
-            System.out.println("You used" + item.getName() + ". " + effect);
+            System.out.println("You used " + item.getName() + ". " + effect);
         } else {
             System.out.println("This item is not in your bag! You cannot use it.");
         }
