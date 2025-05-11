@@ -31,7 +31,7 @@ public class Tianya extends Room {
 //        this.addConnectedRoom("East", new Moana());
     }
 
-    public void use(Item item) {
+    public void use(Item item, String effect) {
         System.out.println("You cannot use any objects at the main room!");
     }
 

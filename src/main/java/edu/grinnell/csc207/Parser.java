@@ -32,7 +32,7 @@ public class Parser {
             String[] words = input.substring(4).trim().split(" ");
             String object = words[0];
             if (room.hasItem(object)) {
-                room.use(room.getItem(object), "");
+                room.use(room.getItem(object), null);
             } else {
                 System.out.println("The object that you tried to use is not here!");
             }

@@ -210,7 +210,7 @@ public abstract class Room {
                 System.out.println("You picked up the " + object + ".");
             } else if (!wonderTree.hasAttacked() && object.equals(gift.getName())) {
                 System.out.println("To get the " + object + ", you need to attack the " + wonderTree.getName() + "!");
-            } else{
+            } else {
                 System.out.println(item.getName() + " is not a gift! You cannot bring it away!");
             }
         } else {
@@ -241,7 +241,7 @@ public abstract class Room {
         if (hasItem(item)) { //如果item属于room里可以interact的物品
             if (item.isWonderTree(this) && !item.hasAttacked()) {
                 System.out.println("You attacked " + item.getName() + ". "
-                        + "The gift has fallen down by your foot.");
+                        + "The " + this.getGift() + " has fallen down by your foot.");
                 item.setAttackedTrue();
             } else {
                 System.out.println("You cannot attack " + item.getName()

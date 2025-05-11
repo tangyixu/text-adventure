@@ -37,11 +37,10 @@ public class Moana extends Room {
         System.out.println("You feel the ocean breeze and hear the song of the waves.");
     }
 
-    public void use(Item item) {
-        String effect = "You drink the coconut juice and blow across the hollow coconut.\n"
+    public void use(Item item, String effect) {
+        super.use(item, "You drink the coconut juice and blow across the hollow coconut.\n"
                 + "The sound from the coconut summons a swarm of fish.\n"
-                + "The waves stirred up by the fish can carry you back to Tianya.\n";
-        super.use(item, effect);
+                + "The waves stirred up by the fish can carry you back to Tianya.\n");
 
         this.addConnectedRoom("West", new Tianya());
         go("West");

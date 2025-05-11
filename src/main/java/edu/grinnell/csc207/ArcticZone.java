@@ -34,7 +34,7 @@ public class ArcticZone extends Room {
         this.setGift(seed);
     }
 
-    public void use(Item item) {
+    public void use(Item item, String effect) {
         super.use(item, "You ate the lotusroot and suddenly, you float up like a cloud."
                 + "You feel a stream of energy flowing through your body. "
                 + "You sense your Governing and Conception Vessels (Ren and Du meridians) "
