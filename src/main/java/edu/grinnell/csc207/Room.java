@@ -240,7 +240,7 @@ public abstract class Room {
     public void attack(Item item) {
         if (hasItem(item)) { //如果item属于room里可以interact的物品
             if (item.isWonderTree(this) && !item.hasAttacked()) {
-                System.out.println("You attacked " + item.getName() + "."
+                System.out.println("You attacked " + item.getName() + ". "
                         + "The gift has fallen down by your foot.");
                 item.hasAttacked();
             } else {
