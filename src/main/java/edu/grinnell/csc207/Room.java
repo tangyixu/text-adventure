@@ -240,6 +240,7 @@ public abstract class Room {
             if (item.isWonderTree(this) && !item.hasAttacked()) {
                 System.out.println("You attacked " + item.getName() + "."
                         + "The gift has fallen down by your foot.");
+                item.hasAttacked();
             } else {
                 System.out.println("You cannot attack " + item.getName()
                         + " if it is not a wonder tree or it has been attacked!");
