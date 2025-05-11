@@ -241,7 +241,7 @@ public abstract class Room {
                 System.out.println("You attacked " + item.getName() + "."
                         + "The gift has fallen down by your foot.");
             } else {
-                System.out.println("You cannot attack" + item.getName()
+                System.out.println("You cannot attack " + item.getName()
                         + " if it is not a wonder tree or it has been attacked!");
             }
         } else {
@@ -257,7 +257,11 @@ public abstract class Room {
      * @param effect
      */
     public void lookAt(Item item, String effect) {
-        System.out.println("You looked at" + item.getName() + "." + effect);
+        if (effect == null) {
+            System.out.println("You looked at " + item.getName());
+        } else {
+            System.out.println("You looked at " + item.getName() + "." + effect);
+        }
     }
 
     public String getIntro() {
