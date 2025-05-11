@@ -64,7 +64,7 @@ public abstract class Room {
      */
     public boolean hasItem(String str) {
         for (Item i : this.items) {
-            if (i.getName().toLowerCase().equals(name.toLowerCase())) {
+            if (i.getName().toLowerCase().equals(str.toLowerCase())) {
                 return true;
             }
         }
@@ -182,16 +182,17 @@ public abstract class Room {
      * @param object a item that the player is trying talking to
      */
     public void talkTo(String object) {
-        Item item = new Item(object, this);
-        if (hasItem(item) && !item.inBag()) {
-            if (item.isWonderTree(this)) {
-                System.out.println("You talked to " + item.getName() + ". The" + item.getName()
+        //Item item = new Item(object, this);
+        if (hasItem(object)) {
+            Item i = this.getItem(name);
+            if (i.isWonderTree(this)) {
+                System.out.println("You talked to " + i.getName() + ". The" + i.getName()
                         + "says:" + "Welcome to " + this.getName() + "! Only those with courage may take my fruit.");
             } else {
-                System.out.println(item.getName() + " cannot speak if it is not a wonder tree!");
+                System.out.println(i.getName() + " cannot speak if it is not a wonder tree!");
             }
         } else {
-            System.out.println("You didn't see " + item.getName());
+            System.out.println("You didn't see " + object);
         }
 
     }

@@ -11,13 +11,13 @@ public class Moana extends Room {
     private boolean coconutTaken;
 
     private String intro = "You’ve entered a coastal region, "
-            + "walking along a sandy beach lined with countless coconut trees. "
-            + "The sea breeze and the sweet scent of coconuts fill the air. "
+            + "walking along a sandy beach lined with countless coconut trees. \n"
+            + "The sea breeze and the sweet scent of coconuts fill the air. \n"
             + "As you take in the scene, you notice something unusual in the "
-            + "distance—a massive coconut tree, entirely made of gold. "
+            + "distance—a massive coconut tree, entirely made of gold. \n"
             + "Sunlight reflects off its surface, casting dazzling rays "
-            + "in all directions. "
-            + "You pause for a moment, considering whether to attack [coconut tree].";
+            + "in all directions\n. "
+            + "You pause for a moment, considering whether to attack [coconut tree].\n";
 
     public Moana() {
         super("Moana", new ArrayList<>(), null, new HashMap<>(), null);
@@ -46,7 +46,7 @@ public class Moana extends Room {
         this.addConnectedRoom("West", new Tianya());
         go("West");
     }
-    
+
     public void lookAt(Item item) {
         super.lookAt(item, "It is shining under the sunshine.");
     }

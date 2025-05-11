@@ -12,13 +12,11 @@ public class Parser {
 
     public static void parser(Room room) {
         String input = sc.nextLine().toLowerCase();
-        //String[] input2 = input.spilt("");
         if (input.startsWith("wait")) {
             room.Wait();
         } else if (input.startsWith("go") && input.length() > 3) {
             String[] words = input.substring(3).trim().split(" ");
             String object = words[0];
-            //System.out.println("The direction is " + object);
             room.go(object);
         } else if (input.startsWith("talk to") && input.length() > 8) {
             String[] words = input.substring(8).trim().split(" ");
@@ -57,6 +55,3 @@ public class Parser {
         }
     }
 }
-
-/*我不是很确定怎么设置这几个的item 你看一下
-因为比如说我把use的item的inbag设置成 true的话那在room里检验的时候永远都会是inbag的 永远都可以use*/
