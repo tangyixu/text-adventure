@@ -72,6 +72,10 @@ public class Item {
     public boolean hasAttacked() {
         return this.attacked;
     }
+    
+    public void setAttackedTrue(){
+        attacked = true;
+    }
 
     /**
      * set the room of the item to room

@@ -205,8 +205,8 @@ public abstract class Room {
         Item item = new Item(object, this);
         if (hasItem(object)) {
             if (wonderTree.hasAttacked() && object.equals(gift.getName())) {
-                items.remove(item);
-                item.putInBag();
+                items.get(1).putInBag();
+                items.remove(1);
                 System.out.println("You picked up the " + object + ".");
             } else if (!wonderTree.hasAttacked() && object.equals(gift.getName())) {
                 System.out.println("To get the " + object + ", you need to attack the " + wonderTree.getName() + "!");
@@ -242,7 +242,7 @@ public abstract class Room {
             if (item.isWonderTree(this) && !item.hasAttacked()) {
                 System.out.println("You attacked " + item.getName() + ". "
                         + "The gift has fallen down by your foot.");
-                item.hasAttacked();
+                item.setAttackedTrue();
             } else {
                 System.out.println("You cannot attack " + item.getName()
                         + " if it is not a wonder tree or it has been attacked!");
