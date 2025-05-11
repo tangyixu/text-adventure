@@ -31,7 +31,7 @@ public class DeathDesert extends Room {
         this.setGift(gem);
     }
 
-    public void use(Item item) {
+    public void use(Item item, String effect) {
         super.use(item, "You clutch the gemstone in your hand, and suddenly "
                 + "it emits a dazzling light that envelops you. "
                 + "In an instant, you find yourself clad in golden armor, "

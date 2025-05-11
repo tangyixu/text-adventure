@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class Tianya extends Room {
 
-    private String intro = "You’ve entered a grand temple with four towering doors,\n "
+    /*private String intro = "You’ve entered a grand temple with four towering doors,\n "
             + "each aligned with one of the cardinal directions—North, South, East, and West.\n "
             + "Every door radiates a distinct aura: one blazes with the "
             + "intensity of scorching sunlight, another glistens as though sealed in ice,\n "
@@ -20,7 +20,7 @@ public class Tianya extends Room {
             + "beyond these doors—you will be granted one chance at rebirth… "
             + "a chance to return and retake your CSC 207 exam, which you didn’t do so well on this time.\n"
             + "Driven by desperation and determination, you take a deep breath and prepare to begin your journey.\n"
-            + "Which direction will you choose first [North, South, East, West]?\n";
+            + "Which direction will you choose first [North, South, East, West]?\n";*/
 
     public Tianya() {
         super("Tianya", new ArrayList<>(), null, new HashMap<>(), null);
@@ -40,6 +40,6 @@ public class Tianya extends Room {
     }
 
     public String getIntro() {
-        return this.intro;
+        return "Which direction will you choose next [North, South, East, West]?\\n";
     }
 }
