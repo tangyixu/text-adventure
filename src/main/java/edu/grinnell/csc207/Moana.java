@@ -25,7 +25,10 @@ public class Moana extends Room {
     public void waitResponse() {
         System.out.println("You feel the ocean breeze and hear the song of the waves.");
     }
-    
-    
+
+    @Override
+    public void use(Item item, String effect) {
+        super(item, "");
+    }
 
 }
