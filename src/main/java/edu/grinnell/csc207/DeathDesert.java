@@ -32,4 +32,18 @@ public class DeathDesert extends Room {
 
         this.addConnectedRoom("North", new Tianya());
     }
+
+    public void use(Item item) {
+        super.use(item, "You clutch the gemstone in your hand, and suddenly "
+                + "it emits a dazzling light that envelops you. "
+                + "In an instant, you find yourself clad in golden armor, "
+                + "which quickly turns invisible. Yet you feel your "
+                + "combat power has increased dramatically, filling you "
+                + "with newfound confidence to continue your exploration.");
+    }
+
+    public void lookAt(Item item) {
+        super.lookAt(item, "It is covered with dusts and sand.");
+    }
+
 }
