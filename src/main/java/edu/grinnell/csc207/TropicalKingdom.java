@@ -35,13 +35,17 @@ public class TropicalKingdom extends Room {
     }
 
     public void use(Item item) {
-        String effect = "You drink the coconut juice and blow across the hollow coconut.\n"
-                + "The sound from the coconut summons a swarm of fish.\n"
-                + "The waves stirred up by the fish can carry you back to Tianya.\n";
+        String effect = "You eat the juicy guava and dance in the rain.\n"
+                + "You find the Rainbow Tree suddenly starts glowing. Animals come out and dance with you.\n"
+                + "An elephant stops in front of you and carrys you back to Tianya.\n";
         super.use(item, effect);
 
         this.addConnectedRoom("South", new Tianya());
         go("South");
+    }
+    
+    public void lookAt(Item item) {
+        super.lookAt(item, "It is covered with leaves and colorful flowers.");
     }
 
     public String getIntro() {

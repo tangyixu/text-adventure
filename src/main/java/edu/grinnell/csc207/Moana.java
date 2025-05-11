@@ -46,6 +46,10 @@ public class Moana extends Room {
         this.addConnectedRoom("West", new Tianya());
         go("West");
     }
+    
+    public void lookAt(Item item) {
+        super.lookAt(item, "It is shining under the sunshine.");
+    }
 
     public String getIntro() {
         return this.intro;
