@@ -29,10 +29,7 @@ public class DeathDesert extends Room {
         this.addItem(gem);
         this.setWonderTree(tree);
         this.setGift(gem);
-
-        this.addConnectedRoom("North", new Tianya());
     }
-
     public void use(Item item) {
         super.use(item, "You clutch the gemstone in your hand, and suddenly "
                 + "it emits a dazzling light that envelops you. "
@@ -40,6 +37,8 @@ public class DeathDesert extends Room {
                 + "which quickly turns invisible. Yet you feel your "
                 + "combat power has increased dramatically, filling you "
                 + "with newfound confidence to continue your exploration.");
+        this.addConnectedRoom("North", new Tianya());
+        go("North");
     }
 
     public void lookAt(Item item) {

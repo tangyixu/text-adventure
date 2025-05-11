@@ -32,8 +32,6 @@ public class ArcticZone extends Room {
         this.addItem(seed);
         this.setWonderTree(tree);
         this.setGift(seed);
-
-        this.addConnectedRoom("East", new Tianya());
     }
 
     public void use(Item item) {
@@ -42,6 +40,8 @@ public class ArcticZone extends Room {
                 + "You sense your Governing and Conception Vessels (Ren and Du meridians) "
                 + "have been unlocked, and you've gained extraordinary power from "
                 + "a sacred artifact of the Arctic Zone!");
+        this.addConnectedRoom("East", new Tianya());
+        go("East");
     }
 
     public void lookAt(Item item) {
