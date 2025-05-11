@@ -55,14 +55,14 @@ public abstract class Room {
     public boolean hasItem(Item item) {
         return this.items.contains(item);
     }
-    
+
     /**
      * Determine if an item is is interactable in this room.
      *
      * @param str
      * @return true if it is contained, false otherwise.
      */
-    public boolean hasItem(String str) {   
+    public boolean hasItem(String str) {
         for (Item i : this.items) {
             if (i.getName().toLowerCase().equals(str.toLowerCase())) {
                 return true;
@@ -191,7 +191,7 @@ public abstract class Room {
                 System.out.println(item.getName() + " cannot speak becasue it is not a wonder tree!");
             }
         } else {
-            System.out.println("You didn't see " + item.getName());
+            System.out.println("You didn't see " + object);
         }
 
     }

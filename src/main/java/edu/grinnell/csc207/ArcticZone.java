@@ -12,13 +12,13 @@ public class ArcticZone extends Room {
     private boolean loctusTaken;
 
     private String intro = "The biting cold wind lashes against your face. "
-            + "You've entered the Arctic Zone. "
+            + "You've entered the Arctic Zone.\n "
             + "Looking around, you see many penguins and glaciers. "
-            + "In the distance, something is shimmering. "
+            + "In the distance, something is shimmering.\n "
             + "You recall an ancient legend that speaks of a giant Arctic Snow Lotus "
-            + "at the peak of the northern lands. "
-            + "It is said to bear mysterious fruit—fruit that grants magical powers."
-            + "You are thinking of attacking [Lotus].";
+            + "at the peak of the northern lands\n. "
+            + "It is said to bear mysterious fruit—fruit that grants magical powers.\n"
+            + "You are thinking of attacking [Lotus].\n";
 
     public ArcticZone() {
         super("ArcticZone", new ArrayList<>(), null, new HashMap<>(), null);

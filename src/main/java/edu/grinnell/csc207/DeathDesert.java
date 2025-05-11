@@ -11,11 +11,11 @@ public class DeathDesert extends Room {
 
     private boolean gemTaken;
 
-    private String intro = "As soon as you open the door, a mouthful of sand hits you. "
-            + "You've entered the Death Desert! You spot scorpions nearby, "
-            + "and in the distance, you see a shimmering mirage. "
+    private String intro = "As soon as you open the door, a mouthful of sand hits you.\n "
+            + "You've entered the Death Desert! \n You spot scorpions nearby, "
+            + "and in the distance, you see a shimmering mirage. \n"
             + "You need to obtain something from the pyramid for the quest "
-            + "to be considered complete. You prepare to attack the pyramid.";
+            + "to be considered complete.\n You are prepared to attack the pyramid.";
 
     public DeathDesert() {
         super("DeathDesert", new ArrayList<>(), null, new HashMap<>(), null);
