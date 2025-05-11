@@ -21,13 +21,11 @@ public class Parser {
         } else if (input.startsWith("talk to") && input.length() > 8) {
             String[] words = input.substring(8).trim().split(" ");
             String object = words[0];
-            Item item = new Item(object, false, room);
-            room.talkTo(item);
+            room.talkTo(object);
         } else if (input.startsWith("pick up") && input.length() > 8) {
             String[] words = input.substring(8).trim().split(" ");
             String object = words[0];
-            Item item = new Item(object, false, room);
-            room.pickUp(item);
+            room.pickUp(object);
         } else if (input.startsWith("use") && input.length() > 4) {
             String[] words = input.substring(4).trim().split(" ");
             String object = words[0];

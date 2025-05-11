@@ -16,10 +16,9 @@ public class Item {
      * Construct a new item with name and default to be not in bag.
      *
      * @param name
-     * @param inBag
      * @param room
      */
-    public Item(String name, boolean inBag, Room room) {
+    public Item(String name, Room room) {
         this.room = room;
         this.name = name;
         this.inBag = false;
@@ -61,6 +60,10 @@ public class Item {
         return (this.name.equals(room.getTreeName()));
     }
 
+    public boolean isGift(Room room) {
+        return this.name.equals(room.getGift());
+    }
+    
     /**
      * Determine if an object has been attacked.
      *
@@ -68,5 +71,14 @@ public class Item {
      */
     public boolean hasAttacked() {
         return this.attacked;
+    }
+    
+    /**
+     * set the room of the item to room
+     * 
+     * @param room 
+     */
+    public void setRoom(Room room){
+        this.room = room;
     }
 }

@@ -8,7 +8,7 @@ import java.util.Map;
  *
  * @author Tiffany Tang and Annie Li
  */
-public class Room {
+public abstract class Room {
 
     /* The items that are available to interact with in this room.*/
     private List<Item> items;
@@ -25,18 +25,23 @@ public class Room {
     /* The magical wonder tree in the room, which yields gifts after being attacked.*/
     private Item wonderTree;
 
+    /* The gift from the tree*/
+    private Item gift;
+
     /**
      * Construct a room with a list of items that could be found.
      *
      * @param name
      * @param lst
      * @param tree
+     * @param connectedrooms
      */
-    public Room(String name, List<Item> lst, Item tree) {
+    public Room(String name, List<Item> lst, Item tree, Map<String, Room> connectedrooms, Item gift) {
         this.name = name;
         this.items = lst;
         this.wonderTree = tree;
-        this.connectedrooms = null;
+        this.connectedrooms = connectedrooms;
+        this.gift = gift;
     }
 
     /**
@@ -59,6 +64,15 @@ public class Room {
     }
 
     /**
+     * return the name of the gift
+     *
+     * @return
+     */
+    public String getGift() {
+        return this.gift.getName();
+    }
+
+    /**
      * Return the name of the room.
      *
      * @return the name of the room.
@@ -75,6 +89,33 @@ public class Room {
      */
     public void addConnectedRoom(String direction, Room room) {
         this.connectedrooms.put(direction, room);
+    }
+
+    /**
+     * Add an item to the list
+     *
+     * @param item
+     */
+    public void addItem(Item item) {
+        this.items.add(item);
+    }
+
+    /**
+     * set the wonder tree of the room
+     *
+     * @param tree
+     */
+    public void setWonderTree(Item tree) {
+        this.wonderTree = tree;
+    }
+
+    /**
+     * set the gift of the room
+     *
+     * @param gift
+     */
+    public void setGift(Item gift) {
+        this.gift = gift;
     }
 
     /**
@@ -107,12 +148,14 @@ public class Room {
     /**
      * talk to the given object found in the room
      *
-     * @param item a item that the player is trying talking to
+     * @param object a item that the player is trying talking to
      */
-    public void talkTo(Item item) {
-        if (hasItem(item) && !item.inBag()) { 
+    public void talkTo(String object) {
+        Item item = new Item(object, this);
+        if (hasItem(item) && !item.inBag()) {
             if (item.isWonderTree(this)) {
-                System.out.println("You talked to " + item.getName() + ". The" + item.getName() + "says:" + "Welcome to " + this.getName());
+                System.out.println("You talked to " + item.getName() + ". The" + item.getName()
+                        + "says:" + "Welcome to " + this.getName() + "! Only those with courage may take my fruit.");
             } else {
                 System.out.println(item.getName() + " cannot speak if it is not a wonder tree!");
             }
@@ -125,13 +168,18 @@ public class Room {
     /**
      * pick up the given item found in the room
      *
-     * @param item a item that we want to pick up
+     * @param object a item that we want to pick up
      */
-    public void pickUp(Item item) {
-        if (hasItem(item) && !item.inBag()) { 
-            items.remove(item);
-            item.putInBag();
-            System.out.println("You picked up the " + item + ".");
+    public void pickUp(String object) {
+        Item item = new Item(object, this);
+        if (hasItem(item) && !item.inBag()) {
+            if (item.isGift(this)) {
+                items.remove(item);
+                item.putInBag();
+                System.out.println("You picked up the " + item + ".");
+            } else {
+                System.out.println(item.getName() + " is not a gift! You cannot bring it away!");
+            }
         } else {
             System.out.println("You didn't see the " + item + ".");
         }
