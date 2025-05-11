@@ -40,7 +40,10 @@ public class TextAdventure {
         mainHall.addConnectedRoom("east", sea);
         Room curRoom = mainHall;
         while (!inventory.hasAllFourGifts()) {
-            Parser.parser(curRoom);
+            Room next = Parser.parser(curRoom);
+            if (next != null){
+                curRoom = next;
+            }
         }
     }
 }

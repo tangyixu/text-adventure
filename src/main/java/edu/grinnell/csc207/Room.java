@@ -55,16 +55,17 @@ public abstract class Room {
     public boolean hasItem(Item item) {
         return this.items.contains(item);
     }
-
+    
     /**
      * Determine if an item is is interactable in this room.
      *
      * @param str
      * @return true if it is contained, false otherwise.
      */
-    public boolean hasItem(String str) {
+    public boolean hasItem(String str) {   
         for (Item i : this.items) {
-            if (i.getName().toLowerCase().equals(name.toLowerCase())) {
+            System.out.println(i.getName());
+            if (i.getName().toLowerCase().equals(str.toLowerCase())) {
                 return true;
             }
         }
@@ -183,10 +184,10 @@ public abstract class Room {
      */
     public void talkTo(String object) {
         Item item = new Item(object, this);
-        if (hasItem(item) && !item.inBag()) {
-            if (item.isWonderTree(this)) {
-                System.out.println("You talked to " + item.getName() + ". The" + item.getName()
-                        + "says:" + "Welcome to " + this.getName() + "! Only those with courage may take my fruit.");
+        if (hasItem(object)) {
+            if (object.equals(wonderTree.getName())) {
+                System.out.println("You talked to " + item.getName() + ". The " + item.getName()
+                        + " says:" + "Welcome to " + this.getName() + "! Only those with courage may take my fruit.");
             } else {
                 System.out.println(item.getName() + " cannot speak if it is not a wonder tree!");
             }

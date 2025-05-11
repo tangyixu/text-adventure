@@ -12,7 +12,7 @@ public class DeathDesert extends Room {
     private boolean gemTaken;
 
     private String intro = "As soon as you open the door, a mouthful of sand hits you. "
-            + "You've entered the **Death Desert**! You spot scorpions nearby, "
+            + "You've entered the Death Desert! You spot scorpions nearby, "
             + "and in the distance, you see a shimmering mirage. "
             + "You need to obtain something from the pyramid for the quest "
             + "to be considered complete. You prepare to attack the pyramid.";
@@ -22,7 +22,7 @@ public class DeathDesert extends Room {
 
         gemTaken = false;
 
-        Item tree = new Item("Pyramid", this);
+        Item tree = new Item("pyramid", this);
         Item gem = new Item("gem", this);
 
         this.addItem(tree);

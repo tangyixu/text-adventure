@@ -10,7 +10,7 @@ public class Parser {
 
     private static Scanner sc = new Scanner(System.in);
 
-    public static void parser(Room room) {
+    public static Room parser(Room room) {
         String input = sc.nextLine().toLowerCase();
         //String[] input2 = input.spilt("");
         if (input.startsWith("wait")) {
@@ -19,7 +19,8 @@ public class Parser {
             String[] words = input.substring(3).trim().split(" ");
             String object = words[0];
             //System.out.println("The direction is " + object);
-            room.go(object);
+            Room next = room.go(object);
+            return next;
         } else if (input.startsWith("talk to") && input.length() > 8) {
             String[] words = input.substring(8).trim().split(" ");
             String object = words[0];
@@ -55,6 +56,7 @@ public class Parser {
         } else {
             System.out.println("I didn't understand what you want to say...");
         }
+        return null;
     }
 }
 
