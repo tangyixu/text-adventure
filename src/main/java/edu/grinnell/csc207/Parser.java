@@ -12,6 +12,7 @@ public class Parser {
 
     public static void parser(Room room) {
         String input = sc.nextLine().toLowerCase();
+        //String[] input2 = input.spilt("");
         if (input.startsWith("wait")) {
             room.Wait();
         } else if (input.startsWith("go") && input.length() > 3) {

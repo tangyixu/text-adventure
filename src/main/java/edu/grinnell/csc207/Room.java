@@ -36,7 +36,7 @@ public abstract class Room {
      * @param tree
      * @param connectedrooms
      */
-    public Room(String name, List<Item> lst, Item tree, Map<String, Room> connectedrooms, Item gift) {
+    public Room(String intro, String name, List<Item> lst, Item tree, Map<String, Room> connectedrooms, Item gift) {
         this.name = name;
         this.items = lst;
         this.wonderTree = tree;

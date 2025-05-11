@@ -63,7 +63,7 @@ public class Item {
     public boolean isGift(Room room) {
         return this.name.equals(room.getGift());
     }
-    
+
     /**
      * Determine if an object has been attacked.
      *
@@ -72,13 +72,13 @@ public class Item {
     public boolean hasAttacked() {
         return this.attacked;
     }
-    
+
     /**
      * set the room of the item to room
-     * 
-     * @param room 
+     *
+     * @param room
      */
-    public void setRoom(Room room){
+    public void setRoom(Room room) {
         this.room = room;
     }
 }
