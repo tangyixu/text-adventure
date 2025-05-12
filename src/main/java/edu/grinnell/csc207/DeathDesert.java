@@ -32,14 +32,14 @@ public class DeathDesert extends Room {
     }
 
     public void use(Item item, String effect) {
-        super.use(item, "You clutch the gemstone in your hand, and suddenly "
-                + "it emits a dazzling light that envelops you. "
-                + "In an instant, you find yourself clad in golden armor, "
-                + "which quickly turns invisible. Yet you feel your "
-                + "combat power has increased dramatically, filling you "
-                + "with newfound confidence to continue your exploration.");
-        this.addConnectedRoom("North", new Tianya());
-        go("North");
+        super.use(item, "You clutch the gemstone in your hand, and suddenly \n"
+                + "it emits a dazzling light that envelops you. In an instant,\n"
+                + " you find yourself clad in golden armor, which quickly turns\n"
+                + " invisible. Yet you feel your combat power has increased\n"
+                + "dramatically, filling you with newfound confidence to \n"
+                + "continue your exploration.");
+        //this.addConnectedRoom("North", new Tianya());
+        go("north");
     }
 
     public void lookAt(Item item, String effect) {
@@ -48,6 +48,11 @@ public class DeathDesert extends Room {
 
     public String getIntro() {
         return this.intro;
+    }
+
+    @Override
+    public String getDirToMain() {
+        return "north";
     }
 
 }

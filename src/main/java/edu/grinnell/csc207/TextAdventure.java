@@ -33,7 +33,7 @@ public class TextAdventure {
                 + "beyond these doors—you will be granted one chance at rebirth…\n "
                 + "a chance to return and retake your CSC 207 exam, which you didn’t do so well on this time.\n"
                 + "Driven by desperation and determination, you take a deep breath and prepare to begin your journey.\n"
-                + "Which direction will you choose first [North, South, East, West]?\n");
+                + "Which direction will you choose first [North, South, East, West]?");
 
         System.out.println("\nAvailable Actions: \n"
                 + "Wait: wait in the room for one turn\n"
@@ -68,6 +68,6 @@ public class TextAdventure {
         System.out.println("Your mission has been accomplished. \n"
                 + "You have reborn! Reborn one week before the CSC207 finals!\n "
                 + "This time study hard and debug your projects properly!\n "
-                + "Don't play games every day! Wishing you a productive and rewardingsemester!\n");
+                + "Don't play games every day! Wishing you a productive and rewardingsemester!");
     }
 }

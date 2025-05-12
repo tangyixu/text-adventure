@@ -51,4 +51,9 @@ public class ArcticZone extends Room {
     public String getIntro() {
         return this.intro;
     }
+
+    @Override
+    public String getDirToMain() {
+        return "east";
+    }
 }

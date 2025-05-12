@@ -10,6 +10,8 @@ import java.util.Map;
  */
 public abstract class Room {
 
+    private String directionBack;
+
     private String intro;
 
     /* The items that are available to interact with in this room.*/
@@ -53,7 +55,13 @@ public abstract class Room {
      * @return true if it is contained, false otherwise.
      */
     public boolean hasItem(Item item) {
-        return this.items.contains(item);
+        for (Item i : this.items) {
+            if (i.getName().toLowerCase().equals(item.getName().toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
+//        return this.items.contains(item);
     }
 
     /**
@@ -268,5 +276,13 @@ public abstract class Room {
 
     public String getIntro() {
         return this.intro;
+    }
+
+    public String getDirToMain() {
+        return this.directionBack;
+    }
+
+    public Map<String, Room> connectedRooms() {
+        return this.connectedrooms;
     }
 }

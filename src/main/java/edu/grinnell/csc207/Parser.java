@@ -33,12 +33,15 @@ public class Parser {
             String object = words[0];
             if (room.hasItem(object)) {
                 room.use(room.getItem(object), null);
+                Room next = room.connectedRooms().get(room.getDirToMain());
+                return next;
             } else {
                 System.out.println("The object that you tried to use is not here!");
             }
         } else if (input.startsWith("attack") && input.length() > 7) {
-            String[] words = input.substring(7).trim().split(" ");
-            String object = words[0];
+            //String[] words = input.substring(7).trim().split(" ");
+            String object = input.substring(7).trim();
+            //String object = words[0];
             if (room.hasItem(object)) {
                 room.attack(room.getItem(object));
             } else {

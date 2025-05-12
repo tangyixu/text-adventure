@@ -54,4 +54,8 @@ public class Moana extends Room {
         return this.intro;
     }
 
+    @Override
+    public String getDirToMain() {
+        return "west";
+    }
 }

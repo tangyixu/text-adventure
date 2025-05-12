@@ -21,7 +21,6 @@ public class Tianya extends Room {
             + "a chance to return and retake your CSC 207 exam, which you didn’t do so well on this time.\n"
             + "Driven by desperation and determination, you take a deep breath and prepare to begin your journey.\n"
             + "Which direction will you choose first [North, South, East, West]?\n";*/
-
     public Tianya() {
         super("Tianya", new ArrayList<>(), null, new HashMap<>(), null);
 
@@ -40,6 +39,6 @@ public class Tianya extends Room {
     }
 
     public String getIntro() {
-        return "Which direction will you choose next [North, South, East, West]?\\n";
+        return "Which direction will you choose next [North, South, East, West]?\n";
     }
 }
