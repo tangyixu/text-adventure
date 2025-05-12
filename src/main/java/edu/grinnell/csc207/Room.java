@@ -53,19 +53,19 @@ public abstract class Room {
     /**
      * Construct a room with a list of items that could be found.
      *
-     * @param Name
+     * @param name
      * @param lst
      * @param tree
      * @param connectedrooms
-     * @param Gift
+     * @param gift
      */
-    public Room(String Name, List<Item> lst, Item tree,
-            Map<String, Room> connectedrooms, Item Gift) {
-        this.name = Name;
+    public Room(String name, List<Item> lst, Item tree,
+            Map<String, Room> connectedrooms, Item gift) {
+        this.name = name;
         this.items = lst;
         this.wonderTree = tree;
         this.connectedrooms = connectedrooms;
-        this.gift = Gift;
+        this.gift = gift;
     }
 
     /**
@@ -111,7 +111,7 @@ public abstract class Room {
     /**
      * return the name of the gift
      *
-     * @return
+     * @return a string of the name of the gift
      */
     public String getGift() {
         return this.gift.getName();
@@ -130,7 +130,7 @@ public abstract class Room {
      * Get the item from the list based on the item's name.
      *
      * @param name
-     * @return
+     * @return the item of that given name
      */
     public Item getItem(String name) {
         for (Item i : this.items) {
@@ -181,24 +181,29 @@ public abstract class Room {
     /**
      * wait in the room for one turn
      */
-    public void Wait() {
+    public void tWait() {
         System.out.println("Time passes.");
     }
 
     /**
      * go in the given cardinal direction
      *
-     * @param Direction a string that contains the direction that the player
+     * @param direction a string that contains the direction that the player
      * wants to go
      * @return the next room
      */
-    public Room go(String Direction) {
-        Room next = connectedrooms.get(Direction);
+    public Room go(String direction) {
+        Room next = connectedrooms.get(direction);
         if (next == null) {
-            System.out.println("The wind whispers that the path to the " + Direction + " does not yet exist...");
+            System.out.println("The wind whispers "
+                    + "that the path to the " 
+                    + direction + " does not yet exist...");
             return this;
         } else {
-            System.out.println("A gust of wind lifts you gently and places you at the edge of the " + next.getName() + ".");
+            System.out.println("A gust of wind "
+                    + "lifts you gently "
+                    + "and places you at the edge of the " 
+                    + next.getName() + ".");
             System.out.println(next.getIntro());
         }
         return next;
@@ -213,10 +218,17 @@ public abstract class Room {
         Item item = new Item(object, this);
         if (hasItem(object)) {
             if (object.equals(wonderTree.getName())) {
-                System.out.println("You talked to " + item.getName() + ". The " + item.getName()
-                        + " says: Welcome to " + this.getName() + "! Only those with courage may take my fruit.");
+                System.out.println("You talked to " 
+                        + item.getName() + ". The " 
+                        + item.getName()
+                        + " says: Welcome to " 
+                        + this.getName() 
+                        + "! Only those with courage "
+                        + "may take my fruit.");
             } else {
-                System.out.println(item.getName() + " cannot speak becasue it is not a wonder tree!");
+                System.out.println(item.getName() 
+                        + " cannot speak becasue "
+                        + "it is not a wonder tree!");
             }
         } else {
             System.out.println("You didn't see " + object);
@@ -232,16 +244,25 @@ public abstract class Room {
     public void pickUp(String object) {
         Item item = new Item(object, this);
         if (hasItem(object)) {
-            if (wonderTree.hasAttacked() && object.toLowerCase().equals(gift.getName().toLowerCase())) {
+            if (wonderTree.hasAttacked() 
+                    && object.toLowerCase().equals(gift.
+                            getName().toLowerCase())) {
                 items.get(1).putInBag();
-                System.out.println("You picked up the " + object + ".");
-            } else if (!wonderTree.hasAttacked() && object.toLowerCase().equals(gift.getName().toLowerCase())) {
-                System.out.println("To get the " + object + ", you need to attack the " + wonderTree.getName() + "!");
+                System.out.println("You picked up the " 
+                        + object + ".");
+            } else if (!wonderTree.hasAttacked() 
+                    && object.toLowerCase().equals(gift.
+                            getName().toLowerCase())) {
+                System.out.println("To get the " + object 
+                        + ", you need to attack the " 
+                        + wonderTree.getName() + "!");
             } else {
-                System.out.println(item.getName() + " is not a gift! You cannot bring it away!");
+                System.out.println(item.getName() 
+                        + " is not a gift! You cannot bring it away!");
             }
         } else {
-            System.out.println("You didn't see the " + object + ".");
+            System.out.println("You didn't see the " 
+                    + object + ".");
         }
     }
 
@@ -265,7 +286,7 @@ public abstract class Room {
      * @param item
      */
     public void attack(Item item) {
-        if (hasItem(item)) { //如果item属于room里可以interact的物品
+        if (hasItem(item)) {
             if (item.isWonderTree(this) && !item.hasAttacked()) {
                 System.out.println("You attacked " + item.getName() + ". "
                         + "The " + this.getGift() + " has fallen down by your foot.");
@@ -276,7 +297,6 @@ public abstract class Room {
             }
         } else {
             System.out.println("You didn't see " + item.getName());
-            //不是的话就说不可以互动
         }
     }
 
@@ -320,4 +340,9 @@ public abstract class Room {
     public Map<String, Room> connectedRooms() {
         return this.connectedrooms;
     }
+    
+    /**
+     * return if the gift of the room has been taken
+     */
+    public abstract void setTaken();
 }

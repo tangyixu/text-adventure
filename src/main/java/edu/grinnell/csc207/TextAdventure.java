@@ -9,37 +9,36 @@ public class TextAdventure {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Inventory inventory = new Inventory();
         System.out.println("""
         Dear Adventurers, greetings! Welcome to the Fantasy Continent!
-        Here, you'll have the chance to explore four distinct realms:
-        the Arctic Zone, Tropical Kingdom, Death Desert, and Moana.
-        Each holding unique mystical gifts.
+        Here, you'll have the chance to explore four distinct kingdoms:
+        the Arctic Zone, Tropical Kingdom, Death Desert, and Moana.        
+        Each kingdom holds a unique and mysterious gift.
         Now, begin your journey!""");
 
         System.out.println("You’ve entered a grand temple with four "
-                + "towering doors,\n "
-                + "each aligned with one of the cardinal "
-                + "directions—North, South, East, "
-                + "and West.\n "
-                + "Every door radiates a distinct aura: "
+                + "towering doors,\n"
+                + "each aligned with one main "
+                + "direction—North, South, East, "
+                + "and West.\n"
+                + "Every door exudes a unique aura: "
                 + "one blazes with the "
-                + "intensity of scorching sunlight, "
-                + "another glistens as though "
-                + "sealed in ice,\n "
-                + "a third echoes faintly with the "
-                + "rhythmic crashing of waves,\n "
+                + "hot sunlight, "
+                + "another shines as though "
+                + "sealed in ice,\n"
+                + "a third faintly echoes the "
+                + "rhythmic lapping of waves,\n"
                 + "and the last carries the thick, "
                 + "humid scent of a tropical rainforest "
                 + "drenched in rain.\n"
                 + "You remember an old legend: "
-                + "if you collect the four Sacred "
-                + "Trees—each hidden within the "
-                + "elemental palaces\n "
+                + "if you collect the gifts of four sacred"
+                + "trees—each hidden within the "
+                + "kingdoms\n"
                 + "beyond these doors—you will be "
-                + "granted one chance at rebirth…\n "
+                + "granted one chance at rebirth,\n"
                 + "a chance to return and retake your "
-                + "CSC 207 exam, which you "
+                + "CSC 207 exam that you "
                 + "didn’t do so well "
                 + "on this time.\n"
                 + "Driven by desperation and determination, "
@@ -77,17 +76,18 @@ public class TextAdventure {
         mainHall.addConnectedRoom("west", arctic);
         mainHall.addConnectedRoom("east", sea);
         Room curRoom = mainHall;
+        Inventory inventory = new Inventory();
         while (!inventory.hasAllFourGifts()) {
-            Room next = Parser.parser(curRoom);
+            Room next = Parser.parser(curRoom, inventory);
             if (next != null) {
                 curRoom = next;
             }
         }
-        System.out.println("Your mission has been accomplished. \n"
+        System.out.println("Your mission has been accomplished.\n"
                 + "You have reborn! Reborn one week before the CSC207 "
-                + "finals!\n "
-                + "This time study hard and debug your projects properly!\n "
-                + "Don't play games every day! Wishing you a "
-                + "productive and rewardingsemester!");
+                + "finals!\n"
+                + "This time study hard and debug your projects!\n"
+                + "Don't play games every day! Wish you a "
+                + "productive and rewarding semester!");
     }
 }

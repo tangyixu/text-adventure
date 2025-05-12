@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- *
  * @author Annie and Tiffany
  */
 public class Moana extends Room {
@@ -17,16 +16,16 @@ public class Moana extends Room {
      * Greetings of the room.
      */
     private String intro = "You’ve entered a coastal region, "
-            + "walking along a sandy beach lined with countless "
+            + "walking along the beach lined with countless "
             + "coconut trees. \n"
             + "The sea breeze and the sweet scent of coconuts fill the "
             + "air. \n"
             + "As you take in the scene, you notice something unusual in the "
-            + "distance—a massive coconut tree, entirely made of gold. \n"
-            + "Sunlight reflects off its surface, casting dazzling rays "
-            + "in all directions\n. "
+            + "distance—a huge coconut tree, entirely made of gold. \n"
+            + "The sunlight reflects off its surface, casting dazzling lights "
+            + "in all directions\n."
             + "You pause for a moment, considering whether to "
-            + "attack [coconut tree].\n";
+            + "attack coconut tree.\n";
 
     /**
      * Construct a Moana room.
@@ -36,21 +35,13 @@ public class Moana extends Room {
 
         coconutTaken = false;
 
-        Item tree = new Item("Coconut Tree", this);
-        Item coconut = new Item("Coconut", this);
+        Item tree = new Item("coconut tree", this);
+        Item coconut = new Item("coconut", this);
 
         this.addItem(tree);
         this.addItem(coconut);
         this.setWonderTree(tree);
         this.setGift(coconut);
-    }
-
-    /**
-     * Reponse for wait command.
-     */
-    public void waitResponse() {
-        System.out.println("You feel the ocean breeze and hear the song "
-                + "of the waves.");
     }
 
     /**
@@ -71,11 +62,11 @@ public class Moana extends Room {
     }
 
     /**
-     * Look at an item.
-     *
+     * if the user look at the item, then it will have the certain effect
      * @param item
+     * @param effect 
      */
-    public void lookAt(Item item) {
+    public void lookAt(Item item, String effect) {
         super.lookAt(item, "It is shining under the sunshine.");
     }
 
@@ -96,5 +87,12 @@ public class Moana extends Room {
     @Override
     public String getDirToMain() {
         return "west";
+    }
+    
+    /**
+     * return if the gift of the room has been taken
+     */
+    public void setTaken() {
+        this.coconutTaken = true;
     }
 }

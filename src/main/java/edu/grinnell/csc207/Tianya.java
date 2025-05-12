@@ -29,7 +29,7 @@ public class Tianya extends Room {
      * @param effect
      */
     public void use(Item item, String effect) {
-        System.out.println("You cannot use any objects at the main room!");
+        System.out.println("You cannot use any objects on the Tianya!");
     }
 
     /**
@@ -50,4 +50,9 @@ public class Tianya extends Room {
         return "Which direction will you choose next [North, "
                 + "South, East, West]?\n";
     }
+    
+    /**
+     * return if the gift of the room has been taken
+     */
+    public void setTaken() { }
 }
