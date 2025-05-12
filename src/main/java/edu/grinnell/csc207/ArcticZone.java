@@ -25,8 +25,8 @@ public class ArcticZone extends Room {
 
         loctusTaken = false;
 
-        Item tree = new Item("loctus", this);
-        Item seed = new Item("loctusroot", this);
+        Item tree = new Item("lotus", this);
+        Item seed = new Item("lotusroot", this);
 
         this.addItem(tree);
         this.addItem(seed);

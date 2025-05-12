@@ -212,10 +212,10 @@ public abstract class Room {
     public void pickUp(String object) {
         Item item = new Item(object, this);
         if (hasItem(object)) {
-            if (wonderTree.hasAttacked() && object.equals(gift.getName())) {
+            if (wonderTree.hasAttacked() && object.toLowerCase().equals(gift.getName().toLowerCase())) {
                 items.get(1).putInBag();
                 System.out.println("You picked up the " + object + ".");
-            } else if (!wonderTree.hasAttacked() && object.equals(gift.getName())) {
+            } else if (!wonderTree.hasAttacked() && object.toLowerCase().equals(gift.getName().toLowerCase())) {
                 System.out.println("To get the " + object + ", you need to attack the " + wonderTree.getName() + "!");
             } else {
                 System.out.println(item.getName() + " is not a gift! You cannot bring it away!");
