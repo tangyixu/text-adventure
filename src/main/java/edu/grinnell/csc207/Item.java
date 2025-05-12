@@ -1,15 +1,27 @@
 package edu.grinnell.csc207;
 
 /**
- * Items
+ * Possible items in the class.
  *
- * @author Tiffany Tang
+ * @author Tiffany
  */
 public class Item {
 
+    /**
+     * The room it belongs to.
+     */
     private Room room;
+    /**
+     * Name of the item.
+     */
     private String name;
+    /**
+     * If it is in bag, true if it is, false otherwise.
+     */
     private boolean inBag;
+    /**
+     * If it has been attacked.
+     */
     private boolean attacked;
 
     /**
@@ -60,6 +72,12 @@ public class Item {
         return (this.name.equals(room.getTreeName()));
     }
 
+    /**
+     * Determine if the item is a gift of the room.
+     *
+     * @param room
+     * @return true is it is, false otherwise.
+     */
     public boolean isGift(Room room) {
         return this.name.equals(room.getGift());
     }
@@ -72,17 +90,20 @@ public class Item {
     public boolean hasAttacked() {
         return this.attacked;
     }
-    
-    public void setAttackedTrue(){
+
+    /**
+     * Make the item to be has been attacked.
+     */
+    public void setAttackedTrue() {
         attacked = true;
     }
 
     /**
-     * set the room of the item to room
+     * set the room of the item to room.
      *
-     * @param room
+     * @param newRoom
      */
-    public void setRoom(Room room) {
-        this.room = room;
+    public void setRoom(Room newRoom) {
+        this.room = newRoom;
     }
 }

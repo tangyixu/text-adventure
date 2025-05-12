@@ -1,3 +1,6 @@
+/**
+ * Text adventure game package.
+ */
 package edu.grinnell.csc207;
 
 import java.util.List;
@@ -10,42 +13,59 @@ import java.util.Map;
  */
 public abstract class Room {
 
+    /**
+     * The direction back to the main hall.
+     */
     private String directionBack;
 
+    /**
+     * The greetings of each room.
+     */
     private String intro;
 
-    /* The items that are available to interact with in this room.*/
+    /**
+     * The items that are available to interact with in this room.
+     */
     private List<Item> items;
 
-    //private List<String> objects; items代表房间里可以互动的物品 其余摆设用第一次enter room的输出string表示
-
-    /* The rooms that this current room is connected to, which are stored in pairs wit key as the name of the room,
-    and values as the room itself.*/
+    /**
+     * The rooms that this current room is connected to, which are stored in
+     * pairs wit key as the name of the room, and values as the room itself.
+     */
     private Map<String, Room> connectedrooms;
 
-    /* Name of the room*/
+    /**
+     * Name of the room.
+     */
     private String name;
 
-    /* The magical wonder tree in the room, which yields gifts after being attacked.*/
+    /**
+     * The magical wonder tree in the room, which yields gifts after being
+     * attacked.
+     */
     private Item wonderTree;
 
-    /* The gift from the tree*/
+    /**
+     * The gift from the tree.
+     */
     private Item gift;
 
     /**
      * Construct a room with a list of items that could be found.
      *
-     * @param name
+     * @param Name
      * @param lst
      * @param tree
      * @param connectedrooms
+     * @param Gift
      */
-    public Room(String name, List<Item> lst, Item tree, Map<String, Room> connectedrooms, Item gift) {
-        this.name = name;
+    public Room(String Name, List<Item> lst, Item tree,
+            Map<String, Room> connectedrooms, Item Gift) {
+        this.name = Name;
         this.items = lst;
         this.wonderTree = tree;
         this.connectedrooms = connectedrooms;
-        this.gift = gift;
+        this.gift = Gift;
     }
 
     /**
@@ -274,14 +294,29 @@ public abstract class Room {
         }
     }
 
+    /**
+     * Return greetings.
+     *
+     * @return greetings
+     */
     public String getIntro() {
         return this.intro;
     }
 
+    /**
+     * Return direction back to the main hall.
+     *
+     * @return backToMain
+     */
     public String getDirToMain() {
         return this.directionBack;
     }
 
+    /**
+     * Return connectedRooms as a map.
+     *
+     * @return connectedRooms
+     */
     public Map<String, Room> connectedRooms() {
         return this.connectedrooms;
     }
